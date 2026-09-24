@@ -25,7 +25,7 @@
         }
 
         .header-title {
-            color: var(--color-1) !important;
+            color: var(--colo-1) !important;
             font-weight: 500;
             font-size: 0.95rem;
             text-transform: uppercase;
@@ -84,10 +84,76 @@
                 margin-top: 15px;
             }
         }
+
+        /* estilos carouse */
+        .carousel-item {
+            height: 600px; 
+            background-color: var(--color-3); 
+        }
+
+        .carousel-item img {
+            height: auto;
+            width: 100%;
+            object-fit: contain; 
+            object-position: center;
+        }
+
+        .carousel-caption {
+            background: rgba(40, 42, 91, 0.85);
+            border: 2px solid var(--color-4);
+            border-radius: 12px;
+            padding: 10px 15px;
+            backdrop-filter: blur(5px);
+            max-width: 480px;
+            margin: 0 auto 15px auto;
+        }
+
+        .carousel-caption h3 {
+            color: var(--color-4);
+            font-weight: 800;
+            letter-spacing: 1px;
+            font-size: 1.25rem;
+            margin-bottom: 4px;
+        }
+
+        .carousel-caption p {
+            color: var(--colo-1);
+            font-size: 0.85rem;
+            margin-bottom: 8px;
+        }
+
+        .btn-mlbb {
+            background-color: var(--color-4);
+            color: var(--color-3);
+            font-weight: bold;
+            border: none;
+            border-radius: 15px;
+            padding: 4px 14px;
+            font-size: 0.8rem;
+            transition: all 0.3s ease;
+        }
+
+        .btn-mlbb:hover {
+            background-color: var(--color-3);
+            color: #ffffff;
+        }
+
+        .carousel-indicators [data-bs-target] {
+            background-color: var(--color-4);
+        }
+
+        @media (max-width: 991px) {
+            .carousel-item {
+                height: 300px;
+            }
+            .carousel-caption {
+                max-width: 90%;
+            }
+        }
     </style>
 </head>
 
-<body>
+<body style="background-color: #0b0d1b;"> 
 
     <header>
         <nav class="navbar navbar-expand-lg custom-navbar">
@@ -95,7 +161,7 @@
 
                 <a class="navbar-brand d-flex align-items-center me-0" href="#">
                     <img  
-                        src="logo/mobile_legends.png"  
+                        src="images/mobile_legends.png"  
                         alt="Logo Mobile Legends"  
                         class="me-2"
                         width="65" 
@@ -122,7 +188,7 @@
                 <div class="collapse navbar-collapse flex-grow-0" id="menu">
                     <ul class="navbar-nav ms-auto align-items-center pt-2 pt-lg-0">
                         <li class="nav-item">
-                            <a class="btn btn-custom nav-link px-3" href="#">Imágenes</a>
+                            <a class="btn btn-custom nav-link px-3" href="#galeria">Imágenes</a>
                         </li>
                     </ul>
                 </div>
@@ -130,6 +196,67 @@
             </div>
         </nav>
     </header>
+
+    <!-- imagenes en carrusel  -->
+    <main class="container my-5" id="galeria">
+        <div class="text-center mb-4">
+            <h2 class="fw-bold text-uppercase" style="color: var(--color-4);">Galería de Héroes</h2>
+            <p class="fw-semibold" style="color: var(--colo-1);">Descubre a los héroes más poderosos de la Tierra del Amanecer</p>
+        </div>
+
+        <div id="carruselMobileLegends" class="carousel slide shadow-lg rounded-4 overflow-hidden border border-warning" data-bs-ride="carousel">
+            
+            <!-- Indicadores -->
+            <div class="carousel-indicators">
+                <button type="button" data-bs-target="#carruselMobileLegends" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
+                <button type="button" data-bs-target="#carruselMobileLegends" data-bs-slide-to="1" aria-label="Slide 2"></button>
+                <button type="button" data-bs-target="#carruselMobileLegends" data-bs-slide-to="2" aria-label="Slide 3"></button>
+            </div>
+
+            <div class="carousel-inner">
+                
+                <div class="carousel-item active">
+                    <img src="images/carmilla.jpg" class="d-block w-100" alt="Héroe Mobile Legends">
+                    <div class="carousel-caption d-none d-md-block mb-3">
+                        <h3>HÉROES DE COMBATE</h3>
+                        <p>Domina el campo de batalla con las mejores habilidades y robo de vida</p>
+                        <a href="#" class="btn btn-mlbb">Ver Héroe</a>
+                    </div>
+                </div>
+
+                <div class="carousel-item">
+                    <img src="images/tierra_amanecer.jpg" class="d-block w-100" alt="Tierra del Amanecer">
+                    <div class="carousel-caption d-none d-md-block mb-3">
+                        <h3>TIERRA DEL AMANECER</h3>
+                        <p>Explora los diferentes carriles y lidera a tu equipo hacia la victoria 5v5</p>
+                        <a href="#" class="btn btn-mlbb">Ver Mapa</a>
+                    </div>
+                </div>
+
+                <div class="carousel-item">
+                    <img src="images/skins.png" class="d-block w-100" alt="Skins Mobile Legends">
+                    <div class="carousel-caption d-none d-md-block mb-3">
+                        <h3>SKINS EXCLUSIVAS</h3>
+                        <p>Personaliza a tus héroes favoritos con apariencias epicas</p>
+                        <a href="#" class="btn btn-mlbb">Explorar Skins</a>
+                    </div>
+                </div>
+
+            </div>
+
+            <!-- boton anterior y siguiente -->
+            <button class="carousel-control-prev" type="button" data-bs-target="#carruselMobileLegends" data-bs-slide="prev">
+                <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                <span class="visually-hidden">Anterior</span>
+            </button>
+            <button class="carousel-control-next" type="button" data-bs-target="#carruselMobileLegends" data-bs-slide="next">
+                <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                <span class="visually-hidden">Siguiente</span>
+            </button>
+
+        </div>
+    </main>
+
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
 
 </body>
